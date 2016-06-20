@@ -1,0 +1,2 @@
+C:\LoginTest\obj\Debug\LoginTestProject.njsprojResolveAssemblyReference.cache
+C:\LoginTest\bin\Microsoft.NodejsTools.WebRole.dll
