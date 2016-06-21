@@ -1,14 +1,13 @@
-"use strict";
 ///<reference path="../Scripts/typings/angular-protractor/angular-protractor.d.ts" />
+"use strict";
 var LoginAutomation;
 (function (LoginAutomation) {
     var Login = (function () {
         function Login() {
             this.baseUrl = ('https://www.facebook.com');
-            this.emailTextBox = browser.element(by.css('[type="email"]'));
-            this.passwordTextBox = browser.element(by.css('[type="password"]'));
+            this.emailTextBox = browser.element(by.id('email'));
+            this.passwordTextBox = browser.element(by.id('pass'));
             this.loginButton = browser.element(by.css('[value="Log In"]'));
-            this.incorrectPasswordError = browser.element(by.className('_1tp8'));
         }
         Login.prototype.launchFacebook = function () {
             browser.ignoreSynchronization = true;
@@ -20,8 +19,9 @@ var LoginAutomation;
             this.passwordTextBox.sendKeys(password);
             this.loginButton.click();
         };
-        Login.prototype.isIncorrectPasswordErrorDisplayed = function () {
-            return this.incorrectPasswordError.isDisplayed();
+        Login.prototype.getCurrentUrl = function () {
+            browser.ignoreSynchronization = true;
+            return browser.getCurrentUrl();
         };
         return Login;
     }());

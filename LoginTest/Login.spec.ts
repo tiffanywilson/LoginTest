@@ -7,35 +7,17 @@ import CredentialsModule = require('./Credentials');
 describe('Login', function() {
     const login = new LoginModule.LoginAutomation.Login();
     const credentials = new CredentialsModule.LoginAutomation.Credentials();
+    
 
     beforeEach(() => {
         login.launchFacebook();
     });
     
-    it('should fail login attempt using first set of invalid credentials', () => {
-        login.login(credentials.personOne.email, credentials.personOne.password);
-        expect(login.isIncorrectPasswordErrorDisplayed()).toBe(true);
-    });
-
-    it('should fail login attempt using second set of invalid credentials', () => {
-        login.login(credentials.personTwo.email, credentials.personTwo.password);
-        expect(login.isIncorrectPasswordErrorDisplayed()).toBe(true);
-    });
-
-    it('should fail login attempt using third set of invalid credentials', () => {
-        login.login(credentials.personThree.email, credentials.personThree.password);
-        expect(login.isIncorrectPasswordErrorDisplayed()).toBe(true);
-    });
-
-    it('should fail login attempt using fourth set of invalid credentials', () => {
-        login.login(credentials.personFour.email, credentials.personFour.password);
-        expect(login.isIncorrectPasswordErrorDisplayed()).toBe(true);
-    });
-
-    it('should fail login attempt using fifth set of invalid credentials', () => {
-        login.login(credentials.personFive.email, credentials.personFive.password);
-        expect(login.isIncorrectPasswordErrorDisplayed()).toBe(true);
-    });
-
-})
-
+    for (let i = 0; i < 5; i++) {
+        let testCredentials = credentials.userCredentials[i];
+        it('should fail login attempt using first set of invalid credentials', () => {
+            login.login(testCredentials.email, testCredentials.password);
+                expect(login.getCurrentUrl()).toContain('/login.php');
+            });           
+    }
+});

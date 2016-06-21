@@ -7,26 +7,13 @@ var LoginAutomation;
 (function (LoginAutomation) {
     var Credentials = (function () {
         function Credentials() {
-            this.personOne = {
-                email: 'emailOne@notavalidemailaddress.',
-                password: 'password1'
-            };
-            this.personTwo = {
-                email: 'emailTwo@notavalidemailaddress',
-                password: 'password1'
-            };
-            this.personThree = {
-                email: 'emailThree@notavalidemailaddress',
-                password: 'password1'
-            };
-            this.personFour = {
-                email: 'emailFour@notavalidemailaddress',
-                password: 'password1'
-            };
-            this.personFive = {
-                email: 'emailFive@notavalidemailaddress',
-                password: 'password1'
-            };
+            this.userCredentials = [
+                { email: 'emailOne@notavalidemailaddress', password: 'password' },
+                { email: 'emailTwo@notavalidemailaddress', password: 'password' },
+                { email: 'emailThree@notavalidemailaddress', password: 'password' },
+                { email: 'emailFour@notavalidemailaddresss', password: 'password' },
+                { email: 'emailFive@notavalidemailaddress', password: 'password' },
+            ];
         }
         return Credentials;
     }());

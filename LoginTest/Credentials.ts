@@ -6,29 +6,13 @@ export module LoginAutomation {
     
     export class Credentials {
 
-        public personOne = {
-        email: 'emailOne@notavalidemailaddress.',
-        password: 'password1'
-        };
-
-        public personTwo = {
-            email: 'emailTwo@notavalidemailaddress',
-            password: 'password1'
-        };
-
-        public personThree = {
-            email: 'emailThree@notavalidemailaddress',
-            password: 'password1'
-        };
-
-        public personFour = {
-            email: 'emailFour@notavalidemailaddress',
-            password: 'password1'
-        };
-
-        public personFive = {
-            email: 'emailFive@notavalidemailaddress',
-            password: 'password1'
-        };
+        public userCredentials:{email:string, password:string } [] =
+            [
+                {email: 'emailOne@notavalidemailaddress', password: 'password'},
+                {email: 'emailTwo@notavalidemailaddress', password: 'password'},
+                {email: 'emailThree@notavalidemailaddress', password: 'password'},
+                {email: 'emailFour@notavalidemailaddresss', password: 'password'},
+                {email: 'emailFive@notavalidemailaddress', password: 'password'},
+            ];
     }
 }
